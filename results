@@ -1,1 +1,115 @@
+الآن بما أنّ الـ backend تاعك يخدم، لازم تعطي للـ frontend developer وثيقة واضحة فيها API specification باش يعرف كيف يتعامل مع السيرفر.
+الواجهة عادةً تتوثّق بـ REST API doc أو OpenAPI (Swagger)، لكن نقدر نبدأ بواحدة بسيطة:
+
+📌 Product API Documentation
+Base URL
+http://localhost:3000
+
+1. Get all products
+
+Endpoint: GET /products
+
+Description: يرجّع قائمة بكل المنتجات.
+
+Response Example:
+
+[
+  {
+    "id": 1,
+    "name": "شعير",
+    "price": "100.00",
+    "quantity": 200
+  },
+  {
+    "id": 2,
+    "name": "قمح",
+    "price": "150.00",
+    "quantity": 300
+  }
+]
+
+2. Get product by ID
+
+Endpoint: GET /products/:id
+
+Example:
+
+GET /products/1
+
+
+Response:
+
+{
+  "id": 1,
+  "name": "شعير",
+  "price": "100.00",
+  "quantity": 200
+}
+
+3. Create a new product
+
+Endpoint: POST /products
+
+Headers:
+
+Content-Type: application/json
+
+
+Body Example:
+
+{
+  "name": "شعير",
+  "price": 100,
+  "quantity": 200
+}
+
+
+Response:
+
+{
+  "id": 1,
+  "name": "شعير",
+  "price": "100.00",
+  "quantity": 200
+}
+
+4. Update a product
+
+Endpoint: PUT /products/:id
+
+Example:
+
+PUT /products/1
+
+
+Body Example:
+
+{
+  "name": "شعير بلدي",
+  "price": 120,
+  "quantity": 250
+}
+
+
+Response:
+
+{
+  "id": 1,
+  "name": "شعير بلدي",
+  "price": "120.00",
+  "quantity": 250
+}
+
+5. Delete a product
+
+Endpoint: DELETE /products/:id
+
+Example:
+
+DELETE /products/1
+
+
+Response:
+
+{ "message": "Product deleted successfully" }
 
