@@ -14,9 +14,13 @@ create Backend using node:18 and progress latest
 
 باش الحاويتين يتكلمو مع بعض بلا مشاكل:
 
+
+
 docker network create shop-net
 
+
 2. تشغيل PostgreSQL في حاوية
+
 docker run -d \
   --name postgres-db \
   --network shop-net \
@@ -40,12 +44,15 @@ docker run -d \
 
 -p 5432:5432 → نفتح المنفذ باش تقدر تدخل من جهازك
 
+
 🟩 الجزء الثاني: مشروع الباك-إند Node.js
 1. تجهيز الملفات
 
 📂 في جهازك أنشئ مجلد:
 
+
 /home/badr/shop-backend
+
 
 
 فيه ملف package.json:
@@ -67,6 +74,7 @@ docker run -d \
 وملف index.js:
 
 // استيراد المكتبات
+
 const express = require('express');
 const { Pool } = require('pg');
 
